@@ -1,3 +1,39 @@
+'use strict';
+
+let greeting = 'js is great!';
+
+greeting = greeting.split("");
+
+
+function charSwap(greeting) {
+// Swap random elements in an array with each other
+	let item1 = Math.floor(Math.random() * 10);
+	let item2 = Math.floor(Math.random() * 10);
+
+	let letter1 = greeting[item1];
+	let letter2 = greeting[item2];
+
+	greeting[item1] = letter2;
+	greeting[item2] = letter1;
+	return greeting;
+}
+
+console.log(charSwap(greeting));
+
+
+const candies = new Map();
+
+candies.set('red', 'cherry');
+candies.set('green', 'apple');
+candies.set('blue', 'blueberry');
+candies.set('orange', 'clementine');
+candies.set('yellow', 'banana');
+
+for (let candy of candies) {
+	console.log(`The ${candy[1]} flavor is colored ${candy[0]}.`);
+}
+
+
 // Create a function that reverses a word
 
 // Create a function that takes an array of words and returns a new array of the
