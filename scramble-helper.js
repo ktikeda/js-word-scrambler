@@ -10,16 +10,18 @@ function charSwap(greeting) {
 	let item1 = Math.floor(Math.random() * 10);
 	let item2 = Math.floor(Math.random() * 10);
 
-	let letter1 = greeting[item1];
-	let letter2 = greeting[item2];
+	[greeting[item1], greeting[item2]] = [greeting[item2], greeting[item1]];
+	
+	// let letter1 = greeting[item1];
+	// let letter2 = greeting[item2];
 
-	greeting[item1] = letter2;
-	greeting[item2] = letter1;
-	return greeting;
+	// greeting[item1] = letter2;
+	// greeting[item2] = letter1;
+
+	return greeting.join("");
 }
 
 console.log(charSwap(greeting));
-
 
 const candies = new Map();
 
@@ -33,6 +35,16 @@ for (let candy of candies) {
 	console.log(`The ${candy[1]} flavor is colored ${candy[0]}.`);
 }
 
+function candyLookup(color) {
+	if (candies.has(color)) {
+		console.log(candies.get(color));
+	} else {
+		console.log(`Sorry, ${color} doesn't have a flavor`);
+	}
+}
+
+candyLookup('purple');
+candyLookup('red');
 
 // Create a function that reverses a word
 
